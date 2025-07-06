@@ -1,0 +1,32 @@
+{% extends "mani/base.html" %}
+{% block start %}
+
+</nav>
+<div class="container" mt-3>
+    <form class="col-6 mx-auto card p-3 m-3 shadow-lg" method="post" enctype="multipart/form-data">
+      {% csrf_token %} 
+      <h2>Add Blog</h2>
+        <hr>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">BLOG NAME</label>
+            <input name="blog_name" type="text" class="form-control" >
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1"  class="form-label">BLOG INFO</label>
+          <textarea class="form-control" name="blog_info" ></textarea>
+        </div>
+        <div class="mb-3 ">
+         
+          <label class="form-control" for="form-control">BLOG Image</label>
+          <input name="blog_image" type="file" class="form-control" >
+        </div>
+        <div class="mb-3 ">
+         
+            <label class="form-control" for="form-control">BLOG DATE</label>
+            <input name="blog_date" type="date" class="form-control" >
+          </div>
+      <button type="submit" class="btn btn-success m-1">Add blog</button>
+    </form>
+<hr>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'mani/base.html' %}
+{% block start %}
+
+<div class="card mb-3" >
+   <div class="col-6 mx-auto card p-3 m-3 shadow-lg ">
+   {% csrf_token %}
+   <h2>HELLO BUDDY</h2>
+   <div class="mx-auto col-6 mx-auto card p-3 m-3 shadow-lg"> 
+      <form>
+      <div class="mb-3">
+       <input name="search" type="text" placeholder="Blog-search" class="form-control" >
+      </div>
+      <button type="submit" class="btn btn-primary">search</button>
+     </form>
+   </div>
+  
+   {% for blog in blog %}
+   <div class="card-body mb-3" style="border: 2px solid black;">
+      <img src="{{ blog.blog_image.url }}" class="card-img-top" style="width:100%%; height: 200px; border-radius: 10px; object-fit:contain " alt="blog image">
+      <hr>
+         
+         <h5 class="card-title">{{ blog.blog_name }}</h5>
+         <p class="card-text">{{ blog.blog_info }}</p>
+         <p class="card-text">
+            <strong>Published On:</strong> {{ blog.blog_date|date:"F d, Y" }}
+         </p>
+         <a href="{% url 'delete' blog.id %} " class="btn btn-danger">DELETE</a>
+      </div>
+   {% endfor %}
+   
+   </div>
+   <hr>
+</div>
+
+{% endblock %}
