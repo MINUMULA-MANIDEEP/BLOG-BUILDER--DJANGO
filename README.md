@@ -63,6 +63,7 @@ Below are the main URLs available in this Django project:
 - [Logout](http://127.0.0.1:8000/logout/)
 - Delete (example): `http://127.0.0.1:8000/delete/1/`
 
+ <b>It also provide a detailed info about Authentication in django......</b>
 
 ## 🙏 Thank You for Visiting!
 
